@@ -1,0 +1,8 @@
+# k8s/overlays/dev/kustomization.yaml
+resources:
+  - ../../base
+
+patchesStrategicMerge:
+  - patch.yaml
+
+namespace: payments-dev

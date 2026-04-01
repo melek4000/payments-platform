@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: payments-dev
+spec:
+  source:
+    repoURL: https://github.com/melek4000/payments-platform.git
+    path: k8s/overlays/dev
+  destination:
+    namespace: payments-dev
+    server: https://kubernetes.default.svc

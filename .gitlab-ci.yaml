@@ -1,0 +1,16 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  script:
+    - docker build -t melek4000/payments-api:v1 ./app
+
+test:
+  script:
+    - echo "Running tests"
+
+deploy:
+  script:
+    - kubectl apply -f k8s/

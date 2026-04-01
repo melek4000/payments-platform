@@ -1,9 +1,10 @@
+# k8s/overlays/prod/patch.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payments-api
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: payments
@@ -15,10 +16,5 @@ spec:
       containers:
       - name: app
         image: melek4000/payments-api:v1
-        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 4000
-      resources:
-         requests:
-          cpu: "100m"     # Required for metrics to work
-          memory: "128Mi"  
